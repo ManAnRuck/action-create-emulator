@@ -988,7 +988,7 @@ async function run() {
   await Object(_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)(`sh -c \\"sdkmanager --install '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('package')}' > /dev/null"`);
 
   console.log(`Creating emulator... device: ${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('device')}`)
-  await Object(_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)(`sh -c \\"echo no | avdmanager create avd ${args.join(' ')} --device '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('device')}'"`);
+  await Object(_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)(`sh -c \\"echo no | avdmanager create avd ${args.join(' ')}"`);
 }
 
 // run our async main function
