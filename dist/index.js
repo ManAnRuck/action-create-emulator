@@ -981,13 +981,14 @@ async function run() {
     `--force`,
     `--name 'test'`,
     // `--abi 'default/x86'`,
-    `--package '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('package')}'`
+    `--package '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('package')}'`,
+    `--device '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('device')}'`
   ]
   console.log(`Installing packages: ${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('package')}`)
   await Object(_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)(`sh -c \\"sdkmanager --install '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('package')}' > /dev/null"`);
 
-  console.log(`Creating emulator...`)
-  await Object(_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)(`sh -c \\"echo no | avdmanager create avd ${args.join(' ')}"`);
+  console.log(`Creating emulator... device: ${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('device')}`)
+  await Object(_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)(`sh -c \\"echo no | avdmanager create avd ${args.join(' ')} --device '${_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('device')}'"`);
 }
 
 // run our async main function
